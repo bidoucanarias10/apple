@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+@import url("icofont.css");
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+html,body{
+  width: 100%;
+}
+header > div {
+	display:none;
+}
+header > nav {
+	display:flex;
+}
+
+a{
+  text-decoration:none
+}
+
+.header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:50vw;
+  min-height:400px;
+  max-height:550px;
+  min-width:300px;
+  color:#eee;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:200%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); 
+    backface-visibility: hidden;
+    scale(1.0, 1.0);
+    transform: translateZ(0);
+  background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
+  background-size:100%;
+  background-attachment:fixed;
+  animation: grow 360s  linear 10ms infinite;
+  transition:all 0.4s ease-in-out;
+  z-index:-2
+}
+header > div {
+	display:none;
+}
+/* flexbox sur le menu */
+header > nav {
+	display:flex;
+}
+/* On customise les liens */
+header > nav > a {
+	line-height:3em;
+	display:block;
+	width:100%;
+	text-align: center;
+	transition:all 0.5s;
+	text-decoration: none;
+	font-family: sans-serif;
+	color:black;
+}
+/* Ation au passage de la souris */
+header > nav > a:hover {
+	background:#0089bb;
+	box-shadow: 0 0 8px rgb(255, 255, 255) inset;
+}
+/* Actions effecvtuées en version portrait (smartphone) */
+@media screen and (orientation:portrait){
+	/* On affiche les bt... */
+	header > div {
+		display:block;
+		position:relative;
+		right:10px;
+		top:10px;
+		font-size:3em;
+	}
+	/* Couleur du text des icones */
+	header > div > a {
+		text-decoration: none;
+		color:#000000;
+	}
+	/* ... Mais on laisse masqué le bt fermeture */
+	header > div #close {
+		display:none;
+	}
+	/* On masque le menu par défaut */
+	header > nav {
+		display:flex;
+		flex-direction: column;	
+		align-items:center;
+		position:relative;
+		width:70%;
+		left:15%;
+		top:0;
+		font-size:2em;
+		background-color: cadetblue;
+		transform:translate3d(0, -900px, 0);
+		transition:all 1s;
+	}
+	/* Couleur du text en version mobile */
+	header > nav > a {
+		color:white;
+	}
+	/* Lorsque l'on clique sur le burger, on affiche le nav */
+	header#tralala:target > nav {
+		transform:translate3d(0, 0, 0);
+	}
+	/* et on masque le burger */
+	header#tralala:target #burger {
+		display:none;
+	}
+	/* Pour afficher la croix*/
+	header#tralala:target #close {
+		display:block;
+	}
+	/* le lien du bt close est un #, ce qui annulera tous les target précédents*/
+}
+
+
+.header a{
+  color:#eee
+}
+
+.info{
+  width:70%;
+  padding:15% 10% 0 10%;
+  text-align:center;
+  text-shadow:0 2px 3px rgba(0,0,0,0.2)
+}
+.author{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  position: absolute;
+  border-radius:50%;
+  background-size:cover;
+  background-image:url(/images/undefined\ -\ Imgur.png) center no-repeat;
+  box-shadow:0 2px 3px rgba(0,0,0,0.3);
+  margin-bottom:3px
+}
+.info h4, .meta{
+  font-size:0.7em;
+}
+.meta{
+  font-style:italic;
+}
+.avatar {
+  width: 6em;
+  height: 6em;
+  border-radius:50px;
+}
+@keyframes grow{
+  0% { transform: scale(1) translateY(0px)}
+  50% { transform: scale(1.2) translateY(-400px)}
+}
+.digital {
+  display: flex;
+	flex-wrap: wrap;
+	line-height: 1em;
+	justify-content: center;
+	align-items: center;
+  padding:2% 4%;
+  text-align:justify;
+  color: #0089bb;
+}
+.center {
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  padding:2% 4%;
+  text-align:justify;
+}
+.content{ 
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  padding:5% 10%;
+  text-align:justify
+}
+.btn{
+  color:#333;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-weight:600
+}
+
+.twtr{
+  margin-top:100px
+}
+
+/*debut de la partie main*/
+
+.trip {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border:0px solid #f20b0b;
+	width: 640px;
+	margin-left: 25vw;
+}
+
+video {
+	display: flex;
+	width: 640px;
+	height: 360px;
+}
+
+figure {
+	display: flex;
+	width: 90vw;
+	height: 30vw;
+}
+figure>img {
+	
+	object-fit: cover; /*ne defore pas les images */
+	width: 25vw;
+	height: 25vw;
+	display: flex;
+	border:5px solid #000000;
+	margin-left: 35vw;
+	margin-right: 35vw;
+	border-radius: 13vw; /*POur le rond*/
+}
+main {
+	display: flex;
+
+}
+.end_landing {
+	display: flex;
+	justify-content: center;
+	color: #0089bb;
+	font-family: 'italic','Raleway', sans-serif,Helvetica,'roboto','rempart One','Times New Roman';
+	font: 100px,'rempart one',Arial,Lucida;
+	margin-block-start: 1em;
+	margin-inline-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	text-align: justify;
+	padding: 10% 20%;
+	}
+
+main>p {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-right: 25vw;
+	margin-left:25vw ;
+}
+
+.monde >img {
+	display: flex;
+	width: 20vw;
+	margin:5vw;
+	height: 30vh;
+	object-fit: cover;
+	justify-content: space-around;
+	flex-direction: row;
+}
+p {
+  margin: 0 0 1em 0;
+		margin-block-start: 1em;
+	margin-inline-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+.entry {
+	display: inline-block;
+	margin: 2em;
+	padding: 10px;
+	line-height: 2em;
+	height: 150px;
+	width: 60vw;
+	justify-content: center;
+	text-align: justify;
+	align-items: center;
+	margin-left: 15vw;
+	margin-right: 15vw;
+}
+
+.box {
+  width: 95vw;
+  border: 10px;
+  border-radius: .5em;
+  padding: 10px;
+	align-items: center;
+	text-align: justify;
+  display: flex;
+  justify-content: space-between;
+	line-height: 1.5em;
+  margin: 1em;
+}
+.text {
+	width: 28vw;
+}
+aside {
+	display: flex;
+	width: 80vw;
+	margin-left: 10vw;
+}
+video {
+	flex: 1;
+	width: 30vw;
+	margin: 5vw;
+	padding: 10px;
+}
+
+
+.d1{
+    width: 640px;
+    height: 427px;
+    margin: 50px auto;
+    box-shadow: 0px 15px 10px -5px #777;
+    background-color: #EDEDED;
+    background-size: contain;
+    animation: fondu 10s ease-in-out infinite ;
+}
+.conteneur{
+    max-width: 640px;
+    margin: 50px auto;
+}
+.d1:hover{
+    animation-play-state: infinite;
+}
+@keyframes fondu{
+    0%{background-image: url("images/africa.jpg");}
+    20%{background-image: url("images/oceania.jpg");}
+    40%{background-image: url("images/america.jpg");}
+    70%{background-image: url("images/asia.jpg");}
+		100%{background-image: url("images/europe.jpg");}
+}
+
+.music {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100vw;
+	text-align: justify;
+	justify-content: center;
+	position: absolute;
+}
+.sound {
+	font: italic,'roboto';
+	font-size: medium;
+	color: #0089bb;
+	flex-direction: column;
+	position: relative;
+	}
+	audio{
+	margin: 1;
+	color: #0089bb;
+}
+footer {
+	height: 20vh;
+	width: 100%;
+	background-color:#0089bb;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	color: #fafafa;
+	font-size: 1rem;
+	font: italic,'roboto',arial;
+}
+
+address {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 15vw;
+	margin-left: 5vw;
+
+}
+.end_web {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 15vw;
+}
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+	justify-content: center;
+	align-items: center;
+  transition: 0.5s;
+}
+
+.icofont-earth {
+  height: 1em;
+  width: 1em;
+  border-radius: 10px;
+  position: relative;
+}
+
+.icofont-instagram {
+  width: 1rem;
+  height: 10em;
+  margin: 1em;
+}
+.final {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 1em;
+}
+.final>a {
+	color: #fafafa;
+}
